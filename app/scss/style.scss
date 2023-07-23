@@ -74,23 +74,37 @@
 
 // =================  main  ====================
 
-// .main {}
+// .main__bg-layer {
+// background-image: url(../images/about-bg.svg), url(../images/skills-bg.svg);
+// background-repeat: no-repeat, no-repeat;
+// background-size: cover, cover;
+// background-position: -40px bottom, 150px center;
+// // -40 -1040 ; 150px top
+// }
 
 // ==================  about  ===================
 
 .about {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 65px 0 60px;
 
-    &__bg-plate {
-        background-image: url(../images/about-bg.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: -40px bottom;
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    // &__bg-layer {
+    //     background-image: url(../images/about-bg.svg);
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     background-position: -40px bottom;
+
+    //     background-image: url(../images/skills-bg.svg);
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     background-position: 150px center;
+    // }
 
     &__photo-wrapper {
         position: relative;
@@ -129,53 +143,30 @@
         margin: 32px 0 48px;
         max-width: 617px;
     }
-
-    &__btn {
-        padding: 16px 24px;
-        background-color: $main;
-        color: $second;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 128.7%;
-        letter-spacing: 0.2px;
-        border: none;
-        outline: transparent;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 3px 3px 8px #021233;
-        transition: all .3s;
-
-        &:hover {
-            transform: translateY(-3px);
-            box-shadow: 6px 6px 7px #152952;
-        }
-
-        &:active {
-            transform: translateY(0);
-            box-shadow: 2px 2px 4px #08152f;
-        }
-    }
 }
 
 // ===================  Skills  ======================
 
 .skills {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 60px 0;
 
-    &__bg-plate {
-        background-image: url(../images/skills-bg.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 150px center;
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    // &__bg-plate {
+    //     background-image: url(../images/skills-bg.svg);
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     background-position: 150px center;
+    // }
+
     &__content {
-        flex: 0 1 730px;
-        padding-right: 65px;
+        flex: 0 1 700px;
+        padding-right: 75px;
     }
 
     &__text {
@@ -187,7 +178,7 @@
         line-height: 170%;
     }
 
-    &__pic-wrapper {
+    &__image-wrapper {
         position: relative;
         background-color: transparent;
         z-index: 1;
@@ -201,7 +192,7 @@
         }
     }
 
-    &__picture {
+    &__image {
         max-width: 475px;
         height: 650px;
         object-fit: cover;
@@ -252,9 +243,209 @@
     }
 }
 
+// ====================  Works  ======================
 
 
+.works {
+    height: 100vh;
+    padding: 60px 0;
 
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image-wrapper {
+        position: relative;
+        background-color: transparent;
+
+        &::before {
+            content: url(../images/decor-element.png);
+            position: absolute;
+            top: -36px;
+            left: -50px;
+            z-index: -1;
+        }
+    }
+
+    &__image {
+        max-width: 475px;
+        height: 650px;
+        object-fit: cover;
+    }
+
+    &__scroll {
+        margin-top: 35px;
+        margin-left: -40px;
+    }
+
+    &__content {
+        flex: 0 1 700px;
+        padding-left: 65px;
+    }
+}
+
+.slider {
+    margin-top: 32px;
+
+    &__title {
+        color: $title;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    &__desc {
+        max-width: 617px;
+        color: $main;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 170%;
+        margin-top: 24px;
+    }
+
+    & ul.slider__tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 48px 0;
+    }
+
+    &__tech-item {
+        padding: 8px 12px;
+        color: $second;
+        background-color: $bg;
+        border-radius: 4px;
+    }
+
+    &__dots {
+        margin-top: 50px;
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        &-item {
+            cursor: pointer;
+
+            :hover {
+                .slider__dots-btn {
+                    background-color: $main;
+                }
+            }
+
+            &--active {
+                .slider__dots-number {
+                    display: block;
+                }
+
+                .slider__dots-btn {
+                    background-color: $title;
+                }
+            }
+        }
+
+        &-number {
+            display: none;
+            color: $main;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        &-btn {
+            display: block;
+            height: 4px;
+            width: 115px;
+            background-color: $bg;
+            transition: all .3s;
+        }
+    }
+}
+
+// ==================  Message  ==================
+
+.message {
+    padding: 70px 0;
+    min-height: 610px;
+    background-image: url(../images/contact-decor.svg);
+    background-repeat: repeat;
+    background-size: cover;
+
+    &__inner {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+    }
+
+    &__text {
+        color: $main;
+        font-size: 38px;
+        font-weight: 600;
+        line-height: 46px;
+        max-width: 430px;
+    }
+}
+
+.form {
+    padding: 32px 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 0 1 700px;
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        width: 100%;
+        height: 50px;
+        padding: 10px 15px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 170%;
+    }
+
+    &__area {
+        padding: 10px 15px;
+        resize: none;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 170%;
+        width: 100%;
+    }
+}
+
+
+// =================  Footer  ===================
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    min-height: 215px;
+    background-color: $main;
+    color: $second;
+
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__date {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
 
 
 
