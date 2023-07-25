@@ -15,15 +15,68 @@
     font-weight: 700;
 }
 
+
+.contact-list {
+    display: flex;
+    gap: 18px;
+}
+
+.contact__link {
+    & svg>path {
+        transition: all .3s;
+    }
+
+    & svg>g>path {
+        transition: all .3s;
+    }
+
+    &:hover {
+        svg>path {
+            fill: $title;
+        }
+
+        svg>g>path {
+            fill: $title;
+        }
+    }
+}
+
 .scroll {
+    z-index: 10;
 
     &__link {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        // position: relative;
-        // left: 36px;
-        // bottom: 40px;
-        // z-index: 5;
+
+        & svg path {
+            transition: all .3s;
+        }
+
+        &:hover {
+
+            &>svg {
+                animation: bouncedown .4s alternate ease infinite;
+
+                @keyframes bouncedown {
+                    from {
+                        transform: translateY(-2px);
+                    }
+
+                    to {
+                        transform: translateY(2px);
+                    }
+                }
+            }
+
+            & svg path {
+                fill: $title;
+            }
+
+            & .scroll__text {
+                font-weight: 600;
+                color: $title;
+            }
+        }
     }
 
     &__text {
@@ -31,6 +84,7 @@
         font-size: 12px;
         font-weight: 500;
         padding-left: 8px;
+        transition: all .3s;
     }
 }
 

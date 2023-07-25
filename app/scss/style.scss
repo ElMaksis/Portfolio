@@ -3,11 +3,24 @@
 @import 'reset';
 @import 'global';
 
+
+
+// ==================  Header  ==================
+
+
 .header {
-    background-image: url(../images/header-bg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left center;
+    position: relative;
+
+    &__bg-layer {
+        position: absolute;
+        top: 0;
+        left: -80px;
+        z-index: -5;
+    }
+
+    &__bg-decor {
+        height: 100vh;
+    }
 
     &__wrapper {
         height: 99vh;
@@ -34,11 +47,6 @@
         font-weight: 600;
         color: $second;
         margin: 16px 0 31px 0;
-    }
-
-    &__contact-list {
-        display: flex;
-        gap: 18px;
     }
 
     &__scroll {
@@ -71,22 +79,12 @@
 }
 
 
-
-// =================  main  ====================
-
-// .main__bg-layer {
-// background-image: url(../images/about-bg.svg), url(../images/skills-bg.svg);
-// background-repeat: no-repeat, no-repeat;
-// background-size: cover, cover;
-// background-position: -40px bottom, 150px center;
-// // -40 -1040 ; 150px top
-// }
-
 // ==================  about  ===================
 
 .about {
     height: 100vh;
     padding: 65px 0 60px;
+    position: relative;
 
     &__inner {
         display: flex;
@@ -94,17 +92,12 @@
         align-items: center;
     }
 
-    // &__bg-layer {
-    //     background-image: url(../images/about-bg.svg);
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     background-position: -40px bottom;
-
-    //     background-image: url(../images/skills-bg.svg);
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     background-position: 150px center;
-    // }
+    &__bg-layer {
+        position: absolute;
+        top: -390px;
+        left: 0;
+        z-index: -6;
+    }
 
     &__photo-wrapper {
         position: relative;
@@ -126,8 +119,9 @@
     }
 
     &__scroll {
-        margin-top: 35px;
-        margin-left: -40px;
+        position: absolute;
+        left: -30px;
+        bottom: -80px;
     }
 
     &__content {
@@ -150,6 +144,14 @@
 .skills {
     height: 100vh;
     padding: 60px 0;
+    position: relative;
+
+    &__bg-layer {
+        position: absolute;
+        top: -650px;
+        right: 0;
+        z-index: -5;
+    }
 
     &__inner {
         display: flex;
@@ -157,16 +159,16 @@
         align-items: center;
     }
 
-    // &__bg-plate {
-    //     background-image: url(../images/skills-bg.svg);
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     background-position: 150px center;
-    // }
-
     &__content {
         flex: 0 1 700px;
         padding-right: 75px;
+        position: relative;
+    }
+
+    &__scroll {
+        position: absolute;
+        left: -10px;
+        bottom: -120px;
     }
 
     &__text {
@@ -249,6 +251,14 @@
 .works {
     height: 100vh;
     padding: 60px 0;
+    position: relative;
+
+    &__bg-layer {
+        position: absolute;
+        top: 400px;
+        left: 70px;
+        z-index: -5;
+    }
 
     &__inner {
         display: flex;
@@ -276,8 +286,9 @@
     }
 
     &__scroll {
-        margin-top: 35px;
-        margin-left: -40px;
+        position: absolute;
+        left: -15px;
+        bottom: -80px;
     }
 
     &__content {
@@ -369,7 +380,7 @@
 
 .message {
     padding: 70px 0;
-    min-height: 610px;
+    min-height: 650px;
     background-image: url(../images/contact-decor.svg);
     background-repeat: repeat;
     background-size: cover;
@@ -435,6 +446,14 @@
     min-height: 215px;
     background-color: $main;
     color: $second;
+    position: relative;
+
+    &__bg-layer {
+        position: absolute;
+        bottom: 0;
+        right: 100px;
+        z-index: 2;
+    }
 
     &__title {
         font-size: 18px;
